@@ -2,7 +2,8 @@ const sampleRouter = [
     {
         path: "/",
         name: "sample",
-        component: () => import("@/views/Sample.vue"),
+        meta: { authRequired: true },
+        component: () => import("@/views/sample/Sample.vue"),
     },
 ]
 
