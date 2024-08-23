@@ -31,23 +31,28 @@ const loginId = ref();
 const loginPw = ref();
 
 const loginSubmit = () => {
-    try{
-        const params = {};
-        params.loginId = loginId.value;
-        params.loginPw = loginPw.value;
-        $api.get(`${serverUrl}/login`, params
-        ).then((res)=>{
-            console.log(res);
-            const token = res.data.access_token
-            //localStorage.setItem('')
-
-        });
-    } catch (e) {
-        console.log(`Error : ${e}`);
-        if(e?.response?.status != 500 ) {
-            console.log('네트워크가 원활하지 않습니다. 잠시 후 다시 시도해주세요.')      
-        }
-    }
+    console.log(loginId.value);
+    console.log(loginPw.value);
+    router.push('/');
+    // try{
+    //     const params = {};
+    //     params.loginId = loginId.value;
+    //     params.loginPw = loginPw.value;
+    //     $api.get(`${serverUrl}/login`, params
+    //     ).then((res)=>{
+    //         /* token값 저장 로직 */ 
+    //         console.log(res);
+    //         const token = res.data.access_token;
+    //         localStorage.setItem('access_token', token);
+    //         const refretoken = res.data.refresh_token;
+    //         localStorage.setItem('refresh_token', refretoken);
+    //     });
+    // } catch (e) {
+    //     console.log(`Error : ${e}`);
+    //     if(e?.response?.status != 500 ) {
+    //         console.log('네트워크가 원활하지 않습니다. 잠시 후 다시 시도해주세요.')      
+    //     }
+    // }
 }
 
 onMounted(()=>{

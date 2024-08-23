@@ -2,12 +2,17 @@ import { createRouter, createWebHistory } from 'vue-router';
 import SAMPLE from "@/router/modules/sampleRouter.js"
 
 const routes = [
-    {
-        path: "/login",
-        name: "Login",
-        component: () => import("@/views/sample/Login.vue"),
-    },
-    ...SAMPLE,
+  {
+      path: "/",
+      name: "Home",
+      component: () => import("@/views/sample/Home.vue"),
+  },
+  {
+      path: "/login",
+      name: "Login",
+      component: () => import("@/views/sample/Login.vue"),
+  },
+  ...SAMPLE,
 ];
 
 const router = createRouter({
