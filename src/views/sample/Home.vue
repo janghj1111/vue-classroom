@@ -9,7 +9,7 @@
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          Title
+          Title wd
         </q-toolbar-title>
       </q-toolbar>
 
@@ -42,19 +42,11 @@
   </q-layout>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 
-export default {
-  setup () {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-}
+const leftDrawerOpen = ref(false)
+const toggleLeftDrawer = () => {
+  leftDrawerOpen.value = !leftDrawerOpen.value
+} 
 </script>
