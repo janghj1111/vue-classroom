@@ -46,15 +46,15 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
 
-app.provide("$axios", axios);
 // jhj 로컬테스트용
+app.provide("$axios", axios);
 const serverUrl = "//localhost:9092";
 app.provide("$serverUrl", serverUrl);
 
 // app.use(store); pinia로 대체
 app.use(router);
 app.use(pinia);
-app.use(axios);
+//app.use(axios); // RangeError: Maximum call stack size exceeded // axios js 수정필요
 //app.use(util)
 //app.use(constant)
 //app.use(validator)

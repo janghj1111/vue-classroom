@@ -1,4 +1,5 @@
 <template>
+  <!-- <div>Home</div> -->
   <q-layout view="hHh lpR fFf">
 
     <q-header elevated class="bg-primary text-white" height-hint="98">
@@ -21,7 +22,7 @@
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <!-- drawer content -->
+      그리는 영역
     </q-drawer>
 
     <q-page-container>
@@ -45,8 +46,8 @@
 <script setup>
 import { ref } from 'vue'
 
-const leftDrawerOpen = ref(false)
-const toggleLeftDrawer = () => {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-} 
+// const leftDrawerOpen = ref(false)
+// const toggleLeftDrawer = () => {
+//   leftDrawerOpen.value = !leftDrawerOpen.value
+// } 
 </script>

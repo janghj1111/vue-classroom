@@ -1,23 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import routes from "./routes";
 import { Loading } from "quasar";
-import useStore from "@/stores";
-
-import SAMPLE from "@/router/modules/sampleRouter.js"; // jhj 삭제예정
-
-const routes2 = [
-  {
-    path: "/",
-    name: "Home",
-    component: () => import("@/views/sample/Home.vue"),
-  },
-  // {
-  //     path: "/login",
-  //     name: "Login",
-  //     component: () => import("@/views/sample/Login.vue"),
-  // },
-  ...SAMPLE,
-];
+//import useStore from "@/stores";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +12,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   console.log(to); // routes
   Loading.show();
+  Loading.hide();
   beforeCheck(to, from, next);
 });
 
@@ -49,22 +34,22 @@ router.afterEach((to, from) => {
 
 // 네비게이션 가드 로직
 const beforeCheck = (to, from, next) => {
-  const store = useStore();
-
-  if (!store.auth.user && to.name !== "") {
-    // 로그인 x
-    next({ name: "Login" });
-    return;
-  } else {
-    // 로그인 o
-    // 메뉴 권한 체크
-    if (!to.meta.authCheck || store.auth.isAuthMenuCheck(to.meta.id)) {
-      next(); // 페이지이동 허용
-    } else {
-      console.log("권한없음");
-      return;
-    }
-  }
+  console.log('beforeCheck');
+  // const store = useStore();
+  // if (!store.auth.user && to.name !== "") {
+  //   // 로그인 x
+  //   next({ name: "Login" });
+  //   return;
+  // } else {
+  //   // 로그인 o
+  //   // 메뉴 권한 체크
+  //   if (!to.meta.authCheck || store.auth.isAuthMenuCheck(to.meta.id)) {
+  //     next(); // 페이지이동 허용
+  //   } else {
+  //     console.log("권한없음");
+  //     return;
+  //   }
+  // }
 
   // jhj v1
   // const isAuth = false; // 인증안된상태 // !!sessionStorage.getItem('authToken')

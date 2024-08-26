@@ -1,31 +1,13 @@
 <template>
   <div>
-    <Layout>
-      <!-- <RouterView/> -->
-    </Layout>
+    <!-- <Layout></Layout> 레이아웃--> 
+    <router-view></router-view>
   </div>
 </template>
-
-<style scoped>
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-} */
-</style>
-
 <script setup>
-//import HelloWorld from './components/HelloWorld.vue'
 import { onMounted } from 'vue';
 import Layout from '@/components/layout/Index.vue';
-
+import Home from '@/views/sample/Home.vue';
 onMounted(()=>{
   //console.log('>> NODE_ENV >>', import.meta.env.VITE_USER_NODE_ENV);
   console.log('>> NODE_ENV >>', import.meta.env);
@@ -33,3 +15,4 @@ onMounted(()=>{
 
 
 </script>
+<style scoped></style>

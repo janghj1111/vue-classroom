@@ -2,6 +2,11 @@ import adminRoutes from "./adminRoutes";
 
 const routes = [
   {
+    path: "/",
+    name: "Home",
+    component: () => import("@/views/sample/Home.vue"),
+  },
+  {
     path: "/login",
     name: "Login",
     component: () => import("@/views/login/Login.vue"),
@@ -20,11 +25,11 @@ const routes = [
       authRequired: false,
     },
   },
-  { path: "/:catchAll(.*)", redirect: "/notfound" }, // 404페이지
-  { path: "/", redirect: "/admin" }, // admin 페이지
+  //{ path: "/:catchAll(.*)", redirect: "/notfound" }, // 404페이지
+  //{ path: "/", redirect: "/admin" }, // admin 페이지
 ];
 
 //routes.push(adminRoutes);
-//routes.push(sampleRoutes)
+//routes.push(sampleRoutes);
 
 export default routes;
