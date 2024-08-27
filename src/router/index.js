@@ -19,7 +19,7 @@ router.beforeEach((to, from, next) => {
 router.beforeResolve((to) => {
   // 로그인 화면 진입시에는 로그아웃 API 호출 X
   console.log(to.path);
-  console.log(store.auth.user);
+  //console.log(store.auth.user);
   // if(to.path !== '/login') {
   //   const store = useStore();
   //   if(!store.auth.user){
@@ -35,6 +35,7 @@ router.afterEach((to, from) => {
 // 네비게이션 가드 로직
 const beforeCheck = (to, from, next) => {
   console.log('beforeCheck');
+  next();
   // const store = useStore();
   // if (!store.auth.user && to.name !== "") {
   //   // 로그인 x
