@@ -1,5 +1,6 @@
 <template>
-   <q-drawer v-model="store.drawerOpen.isDrawerOpen" show-if-above bordered>
+   <!-- <q-drawer v-model="store.drawerOpen.isDrawerOpen" show-if-above bordered> -->
+   <q-drawer :v-model="true" show-if-above bordered>
       <div class="q-pa-md" style="max-width: 350px">
          <q-list bordered separator>
             <q-item clickable v-ripple to="/sample/dashboard">
